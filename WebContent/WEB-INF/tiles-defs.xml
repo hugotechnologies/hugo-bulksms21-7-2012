@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<!--
+     This is a blank Tiles definition file with a commented example.
+-->
+
+<tiles-definitions>
+
+   
+
+    <definition name="${YOUR_DEFINITION_HERE}">
+    </definition>
+
+    <definition name="baseLayout" path="/baseLayout.jsp">
+        <put name="title"  value="Tiles Example" />
+        <put name="header" value="/header.jsp" />
+        <put name="menu"   value="/menu.jsp" />
+        <put name="body"   value="/body.jsp" />
+        <put name="footer" value="/footer.jsp" />        
+    </definition>
+    <definition name="changepassword" extends="baseLayout">
+        <put name="title" value="changepassword" />
+        <put name="body" value="/changepwd.jsp"/>
+    </definition>
+     <definition name="empty" extends="baseLayout">
+        <put name="title" value="empty" />
+        <put name="body" value="/empty.jsp"/>
+    </definition>
+    <definition name="upload" extends="baseLayout">
+        <put name="title" value="upload" />
+        <put name="body" value="/upload.jsp"/>
+    </definition>
+     <definition name="groupview" extends="baseLayout">
+        <put name="title" value="groupview" />
+        <put name="body" value="/groupview.jsp"/>
+    </definition>
+    <definition name="changepwd" extends="baseLayout">
+        <put name="title" value="success" />
+        <put name="body" value="/changepwd.jsp"/>
+    </definition>
+    <definition name="change" extends="baseLayout">
+        <put name="title" value="success" />
+        <put name="body" value="/change.jsp"/>
+    </definition>
+     <definition name="firstupload" extends="baseLayout">
+        <put name="title" value="upload" />
+        <put name="body" value="/upload.jsp"/>
+    </definition>
+    
+  <definition name="notfound" extends="baseLayout">
+        <put name="title" value="failure" />
+        <put name="body" value="/notfound.jsp"/>
+    </definition>
+    <definition name="managecontactsupload" extends="baseLayout">
+        <put name="title" value="managecontactsupload" />
+        <put name="body" value="/managecontacts.jsp"/>
+    </definition>
+    <definition name="success1" extends="baseLayout">
+        <put name="title" value="success1" />
+        <put name="body" value="/save.jsp"/>
+    </definition>
+     <definition name="success" extends="baseLayout">
+        <put name="title" value="success" />
+        <put name="body" value="/success.jsp"/>
+    </definition>
+     <definition name="delete" extends="baseLayout">
+        <put name="title" value="success" />
+        <put name="body" value="/success.jsp"/>
+    </definition>
+    <definition name="manageview1" extends="baseLayout">
+        <put name="title" value="manageview1" />
+        <put name="body" value="/manageview.jsp"/>
+    </definition>
+     <definition name="sendsmsview" extends="baseLayout">
+        <put name="title" value="sendsms" />
+        <put name="body" value="/sendsms.jsp"/>
+    </definition>
+      <definition name="sendsucc" extends="baseLayout">
+        <put name="title" value="sendsucc" />
+        <put name="body" value="/sendsucc.jsp"/>
+    </definition>
+    <definition name="sendemailview" extends="baseLayout">
+        <put name="title" value="sendemail" />
+        <put name="body" value="/Email.jsp"/>
+    </definition>
+    <definition name="voiceuploadview" extends="baseLayout">
+        <put name="title" value="voiceupload" />
+        <put name="body" value="/voiceupload.jsp"/>
+    </definition>
+    <definition name="composebulksms" extends="baseLayout">
+        <put name="title" value="composebulksms" />
+        <put name="body" value="/composebulksms.jsp"/>
+    </definition>
+    <definition name="messagetype" extends="baseLayout">
+        <put name="title" value="messagetype" />
+        <put name="body" value="/messagetype.jsp"/>
+    </definition>
+    <definition name="preview" extends="baseLayout">
+        <put name="title" value="preview" />
+        <put name="body" value="/preview.jsp"/>
+    </definition>
+    <definition name="lastsuccess" extends="baseLayout">
+        <put name="title" value="preview" />
+        <put name="body" value="/lastsuccess.jsp"/>
+    </definition>
+    <!--
+    <definition name="managecontacts" extends="Manage">
+        <put name="title" value="Manage Contacts" />
+        <put name="body" value="/ManageContacts.jsp"/>
+    </definition>
+    <definition name="groupcontacts" extends="Manage">
+        <put name="title" value="Group Contacts"/>
+        <put name="body" value="/GroupContacts.jsp" />
+    </definition>
+--></tiles-definitions>

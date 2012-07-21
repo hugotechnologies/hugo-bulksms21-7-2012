@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<sql-query name="getthevalues">
+     
+	<return-scalar column="mms_groupid" type="integer"  /> 
+	<return-scalar column="mms_loginid" type="integer" />
+	<return-scalar column="mms_groupname" type="string" />
+	<return-scalar column="mms_groupcontactid" type="string"/>
+	<return-scalar column="mms_recipientname" type="string"/>
+	<return-scalar column="mms_recipientemail" type="string"/>
+	<return-scalar column="mms_recipientphone" type="string"/>
+	<return-scalar column="mms_notes" type="string"/>
+	<return-scalar column="mms_templateid" type="integer"/>
+	<return-scalar column="mms_templatename" type="string"/>
+	<return-scalar column="mms_header" type="string"/>
+	<return-scalar column="mms_body" type="string"/>
+	<return-scalar column="mms_footer" type="string"/>
+	<return-scalar column="mms_type" type="string"/>
+	<return-scalar column="mms_file" type="byte"/>
+	
+	 <![CDATA[Select * from mms_group a,mms_groupcontacts b, mms_template c where b.mms_loginid = c.mms_loginid and a.mms_groupid=b.mms_groupid  and b.mms_loginid=:aloginid and a.mms_groupid=:agroupid and c.mms_type=:mmstype and c.mms_templateid=:atemplateid]]>
+	</sql-query>
+	<sql-query name="getthecontacts">
+     
+	<return-scalar column="mms_contactid" type="integer"  /> 
+	<return-scalar column="mms_loginid" type="integer" />
+	<return-scalar column="mms_recipientname" type="string"/>
+	<return-scalar column="mms_recipientemail" type="string"/>
+	<return-scalar column="mms_recipientphone" type="string"/>
+	<return-scalar column="mms_notes" type="string"/>
+	<return-scalar column="mms_templateid" type="integer"/>
+	<return-scalar column="mms_templatename" type="string"/>
+	<return-scalar column="mms_header" type="string"/>
+	<return-scalar column="mms_body" type="string"/>
+	<return-scalar column="mms_footer" type="string"/>
+	<return-scalar column="mms_type" type="string"/>
+	<return-scalar column="mms_file" type="byte"/>
+	
+	 <![CDATA[Select * from mms_contacts a, mms_template b where a.mms_loginid = b.mms_loginid
+ and a.mms_loginid=:cloginid and b.mms_type=:cmmstype and b.mms_templateid=:ctemplateid]]>
+	</sql-query>
+</hibernate-mapping>

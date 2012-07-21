@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ 
+<class name="com.hugo.pojo.GroupPojo" table="mms_group">
+
+<id name="groupid" type="integer" column="mms_groupid">
+<generator class="increment"/>
+</id>
+<property name="loginid" type="integer" column="mms_loginid" not-null="true" />
+<property name="groupname" type="string" column="mms_groupname" not-null="false" />
+</class>
+ 
+</hibernate-mapping>

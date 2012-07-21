@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.hugo.pojo.MmsTemplatePojo" table="mms_template">
+		<id name="templateid" type="integer" column="mms_templateid">
+			<generator class="increment"/>
+		</id>
+		<property name="loginid" type="integer" column="mms_loginid" />
+		<property name="description" type="string" column="mms_templatename" />
+		<property name="bodytext" type="text" column="mms_body"/>
+		<property name="mmstype" type="string" column="mms_type" />
+		<property name="footer" type="string" column="mms_footer" />
+		<property name="file" type="binary" column="mms_file"/>
+		<property name="header" type="string" column="mms_header" />
+	</class>
+</hibernate-mapping>
+

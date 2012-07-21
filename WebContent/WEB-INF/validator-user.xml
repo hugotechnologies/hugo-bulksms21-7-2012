@@ -1,0 +1,259 @@
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+<form-validation>
+	<formset>
+		<form name="newuser">
+			<field property="uname" depends="required,maxlength,minlength,mask">
+
+				<msg name="required" key="err.user.username.required" />
+				<msg name="maxlength" key="err.user.username.length" />
+				<msg name="minlength" key="err.user.username.length" />
+				<msg name="mask" key="err.user.username.invalid" />
+
+				<arg name="maxlength" key="${var:minlength}" position="0"
+					resource="false" />
+				<arg name="maxlength" key="${var:maxlength}" position="1"
+					resource="false" />
+
+				<arg name="minlength" key="${var:minlength}" position="0"
+					resource="false" />
+				<arg name="minlength" key="${var:maxlength}" position="1"
+					resource="false" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>6</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>15</var-value>
+				</var>
+
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9-_]*$</var-value>
+				</var>
+
+			</field>
+
+
+			<field property="email" depends="required,email">
+
+				<msg name="required" key="err.user.email.required" />
+				<msg name="email" key="err.user.email.invalid" />
+
+			</field>
+
+			<field property="phone" depends="required,mask">
+
+				<msg name="required" key="err.user.phone.required" />
+
+				<msg name="mask" key="err.user.phone.invalid" />
+
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9+]*$</var-value>
+				</var>
+
+
+			</field>
+
+
+		</form>
+
+	</formset>
+
+
+	<formset>
+		<form name="login">
+
+			<field property="username" depends="required,email">
+
+				<msg name="required" key="err.user.email.required" />
+				<msg name="email" key="err.user.email.invalid" />
+
+			</field>
+
+			<field property="password" depends="required,maxlength,minlength,mask">
+				<msg name="required" key="err.user.password.required" />
+				<msg name="maxlength" key="err.user.password.length" />
+				<msg name="minlength" key="err.user.password.length" />
+				<msg name="mask" key="err.user.password.invalid" />
+
+				<arg name="maxlength" key="${var:minlength}" position="0"
+					resource="false" />
+				<arg name="maxlength" key="${var:maxlength}" position="1"
+					resource="false" />
+
+				<arg name="minlength" key="${var:minlength}" position="0"
+					resource="false" />
+				<arg name="minlength" key="${var:maxlength}" position="1"
+					resource="false" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>6</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>15</var-value>
+				</var>
+
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9]*$</var-value>
+				</var>
+			</field>
+		</form>
+
+	</formset>
+	<formset>
+		<form name="changepwd">
+
+			<field property="oldpwd" depends="required,maxlength,minlength,mask">
+				<msg name="required" key="err.user.password.required" />
+				<msg name="maxlength" key="err.user.password.length" />
+				<msg name="minlength" key="err.user.password.length" />
+				<msg name="mask" key="err.user.password.invalid" />
+
+				<arg name="maxlength" key="${var:minlength}" position="0"
+					resource="false" />
+				<arg name="maxlength" key="${var:maxlength}" position="1"
+					resource="false" />
+
+				<arg name="minlength" key="${var:minlength}" position="0"
+					resource="false" />
+				<arg name="minlength" key="${var:maxlength}" position="1"
+					resource="false" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>6</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>15</var-value>
+				</var>
+
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9]*$</var-value>
+				</var>
+			</field>
+
+		<field property="newpwd" depends="required,maxlength,minlength,mask">
+				<msg name="required" key="err.user.password.required" />
+				<msg name="maxlength" key="err.user.password.length" />
+				<msg name="minlength" key="err.user.password.length" />
+				<msg name="mask" key="err.user.password.invalid" />
+
+				<arg name="maxlength" key="${var:minlength}" position="0"
+					resource="false" />
+				<arg name="maxlength" key="${var:maxlength}" position="1"
+					resource="false" />
+
+				<arg name="minlength" key="${var:minlength}" position="0"
+					resource="false" />
+				<arg name="minlength" key="${var:maxlength}" position="1"
+					resource="false" />
+
+				<var>
+					<var-name>minlength</var-name>
+					<var-value>6</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>15</var-value>
+				</var>
+
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9]*$</var-value>
+				</var>
+			</field>
+			
+			<field property="retype" depends="validwhen">
+ 
+         	<msg name="validwhen" key="err.user.password.notmatch" />
+ 
+		<var>
+			<var-name>test</var-name>
+			<var-value>
+				(newpwd == *this*)
+			</var-value>
+		</var>
+	 </field>
+
+		</form>
+
+
+	</formset>
+	<formset>
+		<form name="forgot">
+
+			<field property="email" depends="required,email">
+
+				<msg name="required" key="err.user.email.required" />
+				<msg name="email" key="err.user.email.invalid" />
+
+			</field>
+
+		</form>
+
+	</formset>
+	<formset>
+		<form name="groupupload">
+<field property="filelocation" depends="required">
+				<msg name="required" key="err.user.filelocation.required" />
+			</field>
+		</form>
+	</formset>
+<formset>
+		<form name="manageupload">
+<field property="creategroup" depends="required">
+				<msg name="required" key="err.user.creategroup.required" />
+			</field>
+			
+<field property="filelocation" depends="required">
+				<msg name="required" key="err.user.filelocation.required" />
+			</field>
+		</form>
+	</formset>
+	<formset>
+		<form name="sendsms123">
+         <field property="body" depends="required">
+	    <msg name="required" key="err.user.body.required"/>
+			</field>
+       <field property="templatename" depends="required">
+				<msg name="required" key="err.user.templatename.required" />
+			</field>
+		</form>
+	</formset>
+	<formset>
+		<form name="sendemail123">
+        <field property="body" depends="required">
+				<msg name="required" key="err.user.body.required" />
+			</field>
+			<field property="header" depends="required">
+				<msg name="required" key="err.user.header.required" />
+			</field>
+			<field property="footer" depends="required">
+				<msg name="required" key="err.user.footer.required" />
+			</field>
+			<field property="Desc" depends="required">
+				<msg name="required" key="err.user.templatename.required" />
+			</field>
+		</form>
+	</formset>
+<formset>
+		<form name="uploadvoice">
+		<field property="description" depends="required">
+				<msg name="required" key="err.user.templatename.required" />
+			</field>
+<field property="filelocation" depends="required">
+				<msg name="required" key="err.user.filelocation.required" />
+			</field>
+		</form>
+	</formset>
+</form-validation>

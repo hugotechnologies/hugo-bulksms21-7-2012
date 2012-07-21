@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ 
+<class name="com.hugo.pojo.RegisterPojo" table="mms_login">
+<id name="loginId" type="integer" column="mms_loginid">
+<generator class="increment"/>
+</id>
+<property name="name" type="string" column="mms_name" not-null="true" />
+<property name="address" type="string" column="mms_address" not-null="true" />
+<property name="phone" type="string" column="mms_phone" not-null="true" />
+<property name="user" type="string" column="mms_user " not-null="true" />
+<property name="password" type="string" column="mms_pwd  " not-null="true" />
+<property name="emailId" type="string" column="mms_emailid " not-null="true" length="40"/>
+<property name="cdate" type="string" column="mms_cdate" not-null="true" />
+<property name="status" type="string" column="mms_status" not-null="true" />
+<bag name="uploadpojos" table="mms_contacts" cascade="none" lazy="false">
+<key column="mms_loginid"></key>
+<one-to-many class="com.hugo.pojo.UploadPojo"/>
+</bag>
+<bag name="mmstemplatepojos" table="mms_template" cascade="none" lazy="false">
+<key column="mms_loginid"></key>
+<one-to-many class="com.hugo.pojo.MmsTemplatePojo"/>
+</bag>
+</class>
+</hibernate-mapping>

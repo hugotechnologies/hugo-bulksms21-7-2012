@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+ 	<class name="com.hugo.pojo.MmsDataPojo" table="mms_data">
+		<id name="mmsdataid" type="integer" column="mms_dataid">
+			<generator class="increment"/>
+		</id>
+		<property name="mmsloginid" type="integer" column="mms_loginid" />
+		<property name="mmstemplateid" type="integer" column="mms_templateid" />
+		<property name="mmssender" type="string" column="mms_sender"/>
+		<property name="mms_recipient" type="string" column="mms_recipient" />
+		<property name="mmssubject" type="string" column="mms_subject" />
+		<property name="mmsmessage" type="string" column="mms_message"/>
+		<property name="mmsattachment" type="byte" column="mms_attachment" />
+		<property name="senddate" type="string" column="mms_senddate" />
+		<property name="mmstype" type="string" column="mms_type" />
+		<property name="mmsstatus" type="int" column="mms_status" />
+		<property name="mmssendresponse" type="string" column="mms_sendresponse" />
+	</class> 
+	</hibernate-mapping>
+	

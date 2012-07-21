@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+
+    <form-beans>
+		<form-bean name="login" type="com.hugo.form.LoginForm" />
+		<form-bean name="newuser" type="com.hugo.form.NewUserForm" />
+		<form-bean name="groupupload" type="com.hugo.form.UploadForm"/>
+		<form-bean name="changepwd" type="com.hugo.form.ChangepwdForm"/>
+		<form-bean name="GetData" type="com.hugo.form.GetDataForm" />
+		<form-bean name="upload" type="com.hugo.form.ManageForm"/>
+		<form-bean name="forgot" type="com.hugo.form.ForgotForm"/>
+		<form-bean name="manageupload" type="com.hugo.form.ManageContactsForm"/>
+		<form-bean name="sendsms123" type="com.hugo.form.SendSmsForm"/>
+		<form-bean name="sendemail123" type="com.hugo.form.SendEmailForm"/>
+		<form-bean name="uploadvoice" type="com.hugo.form.VoiceUploadForm"/>
+		<form-bean name="messagetype" type="com.hugo.form.ComposeBulkSmsForm"/>
+    </form-beans>
+    <global-exceptions>
+    </global-exceptions>
+    <global-forwards>
+        <forward name="welcome"  path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+     <action path="/Link" parameter="method" type="com.hugo.action.JspAction">
+            <forward name="changepassword" path="changepassword"/>
+            <forward name="empty" path="empty"/>
+            <forward name="empty1" path="empty"/>
+            <forward name="groupupload" path="upload"/>
+            <forward name="sendsmsview" path="sendsmsview"/>
+            <forward name="managecontacts" path="managecontactsupload"/>
+            <forward name="sendemailview" path="sendemailview"/>
+             <forward name="voiceupload" path="voiceuploadview"/>
+             <forward name="composebulksms" path="composebulksms"/>
+             <forward name="messagetype" path="messagetype"/>
+             <forward name="preview" path="preview"/>
+             <forward name="lastsuccess" path="lastsuccess"/>
+        </action>
+    <action path="/login" type="com.hugo.action.LoginAction" name="login"
+			input="/login.jsp">
+			<forward name="success" path="/index.jsp" />
+			<forward name="failure" path="/failure.jsp" />
+		</action>
+		
+		<action path="/sendmail" type="com.hugo.action.Forget" scope="request" name="forgot"
+			input="/forget.jsp">
+			<forward name="success" path="/mailsent.jsp" />
+			</action>
+		<action path="/newuser" type="com.hugo.action.NewUserAction" name="newuser" input="/register.jsp">
+			<forward name="success" path="/mailsent.jsp"/>
+		</action>
+    <action path="/firstupload" name="groupupload"  validate="true" input="firstupload" type="com.hugo.action.UploadAction">
+            <forward name="success" path="success1" />
+        </action>
+		<action name="GetData" path="/showData" type="com.hugo.action.GetDataAction">
+			<forward name="success" path="groupview" />
+		</action>
+		<action  path="/deleteData" type="com.hugo.operations.DeleteContacts">
+			<forward name="success" path="success" />
+			<forward name="failure" path="notfound" />
+		</action>
+		<action path="/managecontacts" name="manageupload" parameter="method" validate="true" input="managecontactsupload" type="com.hugo.action.ManageContactsAction">
+            <forward name="success" path="success1" />
+            <forward name="delete" path="delete" />
+           
+        </action>
+        <action path="/managecontactsdelete"   validate="true"  type="com.hugo.operations.ManageDelete">
+            <forward name="delete" path="delete" />
+           
+        </action>
+        <action path="/managecontactsview" name="upload"  validate="true"  type="com.hugo.action.ManageAction">
+            <forward name="manageview" path="manageview1" />
+        </action>
+       
+<action path="/changepwd" type="com.hugo.action.ChangePassword" name="changepwd" input="changepwd">
+			<forward name="success" path="change" />
+		</action> 
+		<action path="/sendsms" type="com.hugo.action.SendSmsAction" parameter="method" name="sendsms123"
+			input="sendsmsview">
+			<forward name="success" path="sendsucc" />
+		</action>
+		<action path="/sendemail" type="com.hugo.action.SendEmailAction" parameter="method" name="sendemail123" input="sendemailview">
+			<forward name="success" path="sendsucc" />
+		</action>  
+		<action path="/voiceupload" type="com.hugo.action.VoiceUploadAction"  name="uploadvoice" input="voiceuploadview">
+			<forward name="success" path="success1" />
+		</action>
+		<action path="/composegroupnames" name="messagetype" type="com.hugo.action.ComposeBulkSmsAction" parameter="method">
+			<forward name="success" path="composebulksms" />
+			<forward name="messagetype" path="messagetype"></forward>
+		</action>             
+        <action path="/Welcome" forward="/welcomeStruts.jsp"/>
+    </action-mappings>
+    
+    <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/>
+
+     <message-resources parameter="com.hugo.struts.ApplicationResources" />
+    
+   
+    
+   <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validator-user.xml" />
+
+	</plug-in>
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+        <set-property property="definitions-parser-validate" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+	
+  
+</struts-config>

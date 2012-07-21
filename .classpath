@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/antlr-2.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/commons-collections-2.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/commons-digester-1.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/commons-email-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/commons-fileupload-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/commons-io-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/commons-lang-2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/commons-validator-1.3.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/displaytag-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/displaytag-export-poi-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/displaytag-portlet-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/ehcache-1.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/hibernate3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/jta-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/log4j-1.2.11.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/mail.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/mchange-commons-java-0.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/mysql-connector-java-5.1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/poi-3.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/struts-1.2.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/cglib-2.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/asm.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/jstl-1.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/avinash/Desktop/projectjars/standard-1.1.2.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

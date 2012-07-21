@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ 
+<class name="com.hugo.pojo.UploadPojo" table="mms_contacts">
+
+<id name="contactId" type="integer" column="mms_contactid">
+<generator class="increment"/>
+</id>
+<property name="loginId" type="integer" column="mms_loginid" not-null="true" />
+<property name="recipientname" type="string" column="mms_recipientname" not-null="false" />
+<property name="recipientemail" type="string" column="mms_recipientemail" not-null="false" />
+<property name="recipientphone" type="string" column="mms_recipientphone " not-null="false" />
+<property name="notes" type="string" column="mms_notes  " not-null="false" />
+
+</class>
+</hibernate-mapping>
